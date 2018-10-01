@@ -1,12 +1,12 @@
 ## Angular Issues App
 
-The Angular Issue web page lists the issues that were created or updated in the last 7 days. For each issue, the description or body, user and assignee are included if present.
-
-GitHub will create a set of instructions for the author if the description is left blank. In my opinion, this resulted in long, repetitive descriptions overwhelming the page. To simplify, the instructions were replaced with the text, "Description instructions deleted."
+The Angular Issue web page lists the issues that were created or updated in the last 7 days. For each issue, the description or body, user and assignee are included if present. Clinking on a link will open a new tab on the issue, author or assignee.
 
 As a proof-of-concept, simplicity was chosen over more UX rich capabilities. For example, a paging mechanism could be used to avoid endless scrolling.
 
 FWIW, this is my first Angular 6 project. Prior Angular work was done in 1.
+
+Design note: GitHub will create a set of instructions for the author if the description is left blank. In my opinion, this resulted in long, repetitive descriptions which overwhelmed the page. To simplify, the instructions were replaced with the text, "Description instructions deleted."
 
 ## Installation
 
@@ -14,11 +14,17 @@ Follow the [Angular Getting QuickStart Guide](https://angular.io/guide/quickstar
 
 Clone this repository.
 
-Run `ng build` to build the server and download the node_modules.
+Cd to the repository.
 
-## Running the Angular Issues App
+Run `npm install` to install the dependencies. This step can take a long time (10+ minutes).
 
-Run `ng serve --open` to start the server and open the web page. The title, user and assignee links will open a new tab for more details.
+## Build
+
+Run `ng build` to build the server.
+
+## Running the project in a development server
+
+Run `ng serve --open` to start the server and open the web page.
 
 ## Running unit tests
 
