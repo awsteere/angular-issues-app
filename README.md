@@ -4,8 +4,6 @@ The Angular Issue web page lists the issues that were created or updated in the 
 
 As a proof-of-concept, simplicity was chosen over more UX rich capabilities. For example, a paging mechanism could be used to avoid endless scrolling.
 
-FWIW, this is my first Angular 6 project. Prior Angular work was done in 1.
-
 Design note: GitHub will create a set of instructions for the author if the description is left blank. In my opinion, this resulted in long, repetitive descriptions which overwhelmed the page. To simplify, the instructions were replaced with the text, "Description instructions deleted."
 
 ## Installation
