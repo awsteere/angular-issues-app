@@ -2,7 +2,7 @@
   <thead>
     <tr>
       <th>Issue Title</th>
-      <th>Description (Body)</th>
+      <th>Description</th>
       <th>User</th>
       <th>Assignee</th>
     </tr>
@@ -10,13 +10,25 @@
   <tbody>
     <tr *ngFor="let issue of issues">
       <td>
-      	<a target="_blank" href={{issue.url}}>
-      	  <strong>{{issue.title}}</strong>
-      	</a>
+        <a target="_blank" href={{issue.url}}>
+          <strong>{{issue.title}}</strong>
+        </a>
       </td>
       <td>{{issue.body | truncatetext:150}}</td>
-      <td><p *ngIf="issue.user">{{issue.user.login}}</p></td>
-      <td><p *ngIf="issue.assignee">{{issue.assignee.login}}</p></td>
+      <td>
+        <p *ngIf="issue.user">
+          <a target="_blank" href={{issue.user.html_url}}>
+            {{issue.user.login}}
+          </a>
+        </p>
+      </td>
+      <td>
+        <p *ngIf="issue.assignee">
+          <a target="_blank" href={{issue.assignee.html_url}}>
+            {{issue.assignee.login}}
+          </a>
+        </p>
+      </td>
     </tr>
   </tbody>
 </table>
