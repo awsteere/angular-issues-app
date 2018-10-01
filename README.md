@@ -1,6 +1,13 @@
 # TODO
 Handle assignee as JSON object, array of assignees, no assignee
 $ curl -s -i -X GET https://api.github.com/repos/angular/angular/issues?since=20180928'T00:00:00Z' > a
+# add tests
+# add avatar
+# Update README
+# Tests install
+# favicon
+# log errors using logService
+# lint
 
 # Githupapp
 

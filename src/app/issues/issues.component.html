@@ -1,0 +1,22 @@
+<table>
+  <thead>
+    <tr>
+      <th>Issue Title</th>
+      <th>Description (Body)</th>
+      <th>User</th>
+      <th>Assignee</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let issue of issues">
+      <td>
+      	<a target="_blank" href={{issue.url}}>
+      	  <strong>{{issue.title}}</strong>
+      	</a>
+      </td>
+      <td>{{issue.body | truncatetext:150}}</td>
+      <td><p *ngIf="issue.user">{{issue.user.login}}</p></td>
+      <td><p *ngIf="issue.assignee">{{issue.assignee.login}}</p></td>
+    </tr>
+  </tbody>
+</table>
