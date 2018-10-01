@@ -1,7 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
-import { NO_DESCRIPTION_TEXT } from './issues/no-description-text';
-
 /**
   * Truncate text to the specified length and add '...'.
   * Kudos: http://codebuckets.com/2018/01/23/angular-pipe-to-truncate-text-to-the-nearest-whole-word/
@@ -15,7 +13,7 @@ export class TruncateTextPipe implements PipeTransform {
     const biggestWord = 50;
     const elipses = '...';
     const noBodyText = 'PLEASE HELP US PROCESS GITHUB ISSUES FASTER';
-    const needsBodyText = 'Needs description';
+    const needsBodyText = 'Description instructions deleted.';
 
     if (typeof value === 'undefined') {
       return value;

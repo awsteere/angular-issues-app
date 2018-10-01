@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { catchError, map, tap } from 'rxjs/operators';
 
 import { Issue } from '../issue';
 
@@ -13,7 +14,8 @@ export class IssueService {
   constructor(private http: HttpClient) { }
 
   getIssues(): Observable<Issue[]> {
-    return this.http.get<Issue[]>(this.getUrlForPriorSevenDays());
+    return this.http.get<Issue[]>(this.getUrlForPriorSevenDays())
+        .pipe(catchError(this.handleError('getIssues', [])));
   }
 
   private getUrlForPriorSevenDays(): string {
@@ -24,4 +26,24 @@ export class IssueService {
 
     return `${this.githubApiUrl}?since=${sinceDate.toISOString()}`;
   }
+
+  /**
+   * Handle Http operation that failed.
+   * Let the app continue.
+   *
+   * Kudos: Angular Tour of Heroes Tutorial
+   *
+   * @param operation - name of the operation that failed
+   * @param result - optional value to return as the observable result
+   */
+  private handleError<T> (operation = 'operation', result?: T) {
+    return (error: any): Observable<T> => {
+
+      // TODO: send the error to remote logging infrastructure
+      console.error(error); // log to console instead
+
+      // Let the app keep running by returning an empty result.
+      return of(result as T);
+    };
+}
 }
